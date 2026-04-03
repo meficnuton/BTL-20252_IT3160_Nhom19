@@ -7,3 +7,4 @@ data/raw/
 pytest.ini
 tree.txt.
 .codex
+venv
