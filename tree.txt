@@ -1,0 +1,38 @@
+house-price-from-scratch/
+  data/
+    raw/
+      raw.data.csv
+    processed/
+      cleaned.csv              # optional cache you generate
+  notebooks/
+    01_eda.ipynb               # visuals, sanity checks
+    02_model_report.ipynb      # final results/plots/tables
+  src/
+    __init__.py
+    config.py                  # file paths, random seed, feature lists
+    io.py                      # load/save helpers
+    split.py                   # train/valid/test split + k-fold
+    metrics.py                 # MAE, RMSE, R2
+    preprocessing/
+      __init__.py
+      base.py                  # Transformer interface
+      impute.py                # MedianImputer, ModeImputer
+      encode.py                # OneHotEncoder (your own)
+      scale.py                 # StandardScaler (your own)
+      features.py              # date parsing, age, renovated, etc.
+      pipeline.py              # Pipeline: fit/transform chaining
+    models/
+      __init__.py
+      base.py                  # Regressor interface
+      linear_gd.py             # Linear regression via gradient descent
+      ridge_gd.py              # Ridge regression (L2) via GD
+      tree.py                  # DecisionTreeRegressor (CART-style)
+      forest.py                # RandomForestRegressor (optional)
+  scripts/
+    train.py                   # runs training end-to-end, saves metrics
+  tests/
+    test_metrics.py
+    test_linear_gd.py
+    test_onehot.py
+  README.md
+  requirements.txt
